@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Portfolio</title>
+    <link rel='stylesheet' href='main.css'>
+  <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            scroll-padding-top: 100px;
+            scroll-behavior: smooth;
+        }
+        body{
+            background-color: black;
+            height: 100%;
+        }
+        h2{
+            color: white;
+            font-size:38px;
+            text-align: center;
+        }
+        .interface{
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        .flex{
+            display: flex;
+        }
+        header{
+            padding: 20px 4%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 183, 255, 0.25);
+            transition: background-color 0.3s ease;
+        }
+        header a{
+            color: rgb(44, 90, 78);
+            text-decoration: none;
+            display: inline-block;
+            transition: 1.2s;
+        }
+        header a:hover{
+            color: white;
+            transform: scale(1.4);
+        }
+        header > .interface{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header nav ul li{
+            display: inline-block;
+            padding: 5px 40px;
+        }
+        header .button-c button{
+            padding: 10px 40px;
+            font-size: 20px;
+            font-weight: 600;
+            background-color: rgb(0, 247, 255);
+            border: 0;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+        section.site{
+            padding: 95px 4px;
+            box-shadow: 0 0 12px 6px  rgb(4, 126, 163);
+            background: linear-gradient(180deg, rgba(0, 183, 255, 0.55) 0%,  #000000 81% );
+        }
+        section.site .flex{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 65px;
+            padding: 0 55px;
+        }
+        .site h1{
+            color: rgb(249, 252, 252);
+            font-size: 34px;
+            line-height: 40px;
+        }
+        .texto p{
+            color: #fbbf24;
+
+
+
+            font-size: 17px;
+        }
+
+        .img{
+            border: 5px solid rgb(0, 183, 255);
+            border-radius: 50%;
+            overflow: hidden;
+            width: 400px;
+            height: 400px;
+            flex-shrink: 0;
+        }
+        .img img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            object-position: center 20%;
+        }
+           .img{
+                position: relative;
+                animation: flutuar 3s ease,;
+             }
+
+        @keyframes flutuar{
+            50%{top: -35px;}
+            0%{top: 0;}
+            100%{
+                top: 35px;
+            }
+        }
+        span{
+            color:#fbbf24;
+        }
+        section.especialidades{
+            padding:70px 4%;
+            box-shadow: 0 0 12px 6px  rgb(4, 126, 163);
+        }
+          section.especialidades .flex{
+          gap: 30px;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          display: grid;
+          }
+        .especialidades .esp-box{
+            color:white;
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 45Px;
+            transition: 0.8s;
+        }
+          .especialidades .esp-box:hover{
+          transform: scale(1.05);
+          box-shadow: 0 0 14px rgb(14, 102, 153);
+          }
+          .especialidades .esp-box i{
+            font-size: 58px;
+            color: rgb(23, 144, 192);
+          }
+           .especialidades .esp-box h3{
+           font-size: 28px;
+            margin: 15px 1px;
+            }
+            .esp-box .skill-bar{
+              width: 100%;
+              height: 10px;
+              background-color: rgba(255,255,255,0.15);
+              border-radius: 10px;
+              overflow: hidden;
+              margin-top: 18px;
+          }
+            .esp-box .skill-bar-fill{
+             height: 100%;
+             background-color: #fbbf24;
+             border-radius: 10px;
+          }
+            .esp-box .skill-percent{
+             display: block;
+             margin-top: 6px;
+             color: white;
+             font-size: 15px;
+             font-weight: 600;
+             text-align: right;
+         }
+            .img-sobre{
+                gap: 20px;
+                width: 30%;
+                height: 350px;
+                overflow: hidden;
+                border: 2px solid white;
+                border-radius: 25px;
+                flex-shrink: 0;
+            }
+            .img-sobre img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+            section.sobre{
+                padding: 40px 4%;
+                box-shadow: 0 0 12px 6px  rgb(4, 126, 163);
+
+            }
+            section.sobre .flex{
+                align-items: center;
+                gap: 60px;
+            }
+            .sobre .texto-sobre{
+                color: white;
+
+            }
+            .sobre .texto-sobre p{
+                margin: 20px 0;
+                text-align: justify;
+            }
+          .social button{
+             width: 60px;
+             height: 60px;
+             border-radius: 50%;
+             border: 0;
+            background-color: rgb(0, 247, 255);
+             font-size: 20px;
+             cursor: pointer;
+             margin: 0 3px;
+             transition: 0.5s;
+            }
+            button:hover{
+                box-shadow: 0 0 12px 6px  rgb(4, 126, 163);
+                transform: scale3d(1.5);
+            }
+             section.Projectos{
+                padding: 80px 4%;
+                box-shadow: 0 0 12px 6px  rgb(4, 126, 163);
+             }
+              section.Projectos .flex{
+                justify-content: space-around;
+                margin-top: 60px;
+              }
+             .img-port{
+               width: 360px;
+             overflow: hidden;
+             border-radius: 30px;
+             background-color: #000000;
+             }
+             .img-wrapper{
+              position: relative;
+              width: 100%;
+              height: 300px;
+              overflow: hidden;
+             }
+             .img-wrapper img{
+              width: 100%;
+              height: auto;
+              object-fit: cover;
+              display: block;
+              transition: transform 10s ease;
+             }
+             .img-wrapper:hover img{
+              transform: translateY(calc(-100% + 300px));
+             }
+                     
+             .port-botoes{
+                display: flex;
+                gap: 8px;
+                padding: 10px;
+                background-color: rgb(0, 0, 0);
+                border-radius:0 0 30px 30px;
+             }
+             .port-botoes a{
+                flex: 1;
+                text-align: center;
+                padding: 10px 8px;
+                border-radius: 20px;
+                font-size: 14px;
+                font-weight: 600;
+                text-decoration: none;
+                color: black;
+                background-color: aqua;
+                transition: 0.3s;
+                display: block;
+             }
+             .port-botoes a:hover{
+                transform: scale(1.05);
+                box-shadow: 0 0 10px aqua;
+             }
+             .overlay{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                font-weight: 600px;
+                background-color: rgba(34, 30, 30, 0.692);
+                color: rgb(17, 113, 177);
+                opacity: 0;
+                transition: 0.6s;
+             }
+           .img-wrapper:hover .overlay{
+            opacity: 1;
+           }
+             
+            section.formulario{
+                padding: 80px 4%;
+             box-shadow: 0 0 12px 6px  rgb(4, 126, 163);
+            }
+            form{
+                max-width: 500px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                gap: 12px;
+                margin-top: 40px;
+            }
+            form input, form textarea{
+                width: 100%;
+                background-color: rgb(26, 25, 25);
+                border: 0;
+                outline: 0;
+                padding: 22px 15px;
+                border-radius: 20px;
+                color: white;
+                font-size: 18px;
+            }
+            form input::placeholder{
+                color: rgb(17, 133, 187);
+            }
+            form textarea{
+            resize: none;
+            height: 220px;
+            }
+            form .enviar{
+                margin-top: 25px;
+                text-align: center;
+            }
+              form .enviar input{
+                width: 135px;
+                 background-color: rgb(0, 247, 255);
+                color: black;
+                font-weight: 700;
+                cursor: pointer;
+                transition: 1.25s;
+              }
+              footer{
+                padding: 60px 4%;
+             box-shadow: 0 0 12px 6px  rgb(4, 126, 163);
+              }
+              footer .line {
+                padding: 21px 0;
+                border-bottom: 2px solid rgb(14, 158, 214);
+                justify-content: space-between;
+              }
+              footer .lin p i{
+                color: rgb(15, 122, 194);
+                font-size: 26px;
+              }
+               footer .lin p a{
+                color: white;
+                text-decoration: none;
+               }
+              footer .line{
+                align-items: center;
+              }
+              footer .logo img{
+                display: block;
+                width: auto;
+                height: 100%;
+              }
+              footer .logo{
+                height: 160px;
+                display: flex;
+                align-items: center;
+              }
+              header .logo-header{
+                height: 70px;
+                width: auto;
+                display: block;
+              }
+              footer {
+                background-image: url('money.jpeg');
+                background-size: cover;
+                background-position: center;
+                position: relative;
+              }
+             footer::before {
+               content: '';
+               position: absolute;
+               top: 0;
+               left: 0;
+               width: 100%;
+               height: 100%;
+               background: rgba(0, 0, 0, 0.6);
+               z-index: 0;
+              }
+
+              footer .interface {
+               position: relative;
+               z-index: 1;
+              }
+              .reveal{
+                opacity: 0;
+                transform: translateY(40px);
+                transition: opacity 1.5s ease, transform 1.5s ease;
+              }
+              .reveal.ativo{
+                opacity: 1;
+                transform: translateY(0);
+              }
+              .cursor-light {
+               position: fixed;
+               width: 400px;
+               height: 400px;
+               background: radial-gradient(
+               circle,
+               rgba(255, 255, 255, 0.15) 0%,
+               rgba(255, 255, 255, 0.05) 30%,
+               transparent 50%);
+               border-radius: 50%;
+               pointer-events: none;
+               transform: translate(-50%, -50%);
+               z-index: 9999;
+               transition: opacity 0.3s ease;
+               opacity: 0;
+               }
+              body:hover .cursor-light {
+              opacity: 1;
+               }
+               section.formacao{
+               padding: 80px 4%;
+               box-shadow: 0 0 12px 6px rgb(4, 126, 163);
+               }
+               .formacao .timeline{
+                max-width: 800px;
+                margin: 50px auto 0;
+                padding-left: 30px;
+                border-left: 3px solid rgb(0, 183, 255);
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+               }
+              .formacao .etapa{
+               display: flex;
+               align-items: center;
+               gap: 20px;
+               color: white;
+               padding: 25px;
+               border-radius: 20px;
+               }
+              .formacao .etapa:hover{
+               box-shadow: 0 0 14px rgb(14, 102, 153);
+               }
+               .formacao .etapa i{
+                font-size: 44px;
+                color: rgb(23, 144, 192);
+               }
+                .formacao .etapa h3{
+                font-size: 24px;
+                margin-bottom: 6px;
+                }
+                .formacao .etapa .periodo{
+                 color: #fbbf24;
+                 font-size: 14px;
+                 font-weight: 600;
+                 margin-bottom: 4px;
+                }
+    </style>
+</head>
+<body>
+    <div class="cursor-light" id="cursorLight"></div>
+    <header>
+        <div class="interface">
+            <a href="">
+                <img src="logo.jpeg" alt="" class="logo-header">
+            </a>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#especialidades">Especialidades</a></li>
+                    <li><a href="#formação">Formação</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#projectos">projectos</a></li>
+                </ul>
+            </nav>
+            <div class="button-c">
+                <a href="#formulario"><button>Entre em conctato</button></a>
+            </div>
+        </div>
+    </header>
+    <hr>
+    <main>
+        <section class="site" id="inicio">
+            <div class="interface">
+                <div class="flex">
+                    <div class="texto reveal">
+                        <h1>Kheyzer Ngoque<span>.!</span></h1>
+                         <p>Sou estudante do curso de Técnico de Suporte Informático (TSI), 
+                            uma área que me permite explorar diferentes vertentes da tecnologia 
+                            no dia a dia. <br>
+                            Tenho interesse particular em desenvolvimento web, onde já construí 
+                            alguns projectos práticos utilizando HTML e CSS, e também em 
+                            configuração de redes e diagnóstico de hardware, competências que 
+                            tenho vindo a desenvolver ao longo do curso. <br>
+                            Gosto de aprender novas tecnologias, testar ideias em projectos 
+                            próprios e aplicar na prática aquilo que vou estudando — este 
+                            portfólio é precisamente o resultado desse percurso
+                            <span>.</span></p>
+                    </div>
+                    <div class="img">
+                        <img src="Imagem 0.jpeg" alt="Imagem 1">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <hr>
+    <hr>
+    <section class="especialidades" id="especialidades">
+  <div class="interface">
+    <h2>MINHAS <span>ESPECIALIDADES.!</span></h2>
+    <div class="flex">
+
+      <div class="esp-box reveal">
+        <i class="bi bi-code-square"></i>
+        <h3>Site</h3>
+        <p>Criação de sites modernos e funcionais utilizando HTML, CSS e Google Sites,
+        com foco em organização e facilidade de utilização<span>.</span></p>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width: 75%"></div></div>
+        <span class="skill-percent">75%</span>
+      </div>
+
+      <div class="esp-box reveal">
+        <i class="bi bi-lightning-charge"></i>
+        <h3>Planta Eléctrica</h3>
+        <p>Criação de plantas eléctricas e arquitectónicas,
+        representando instalações e organização dos espaços de forma clara e precisa<span>.</span></p>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%"></div></div>
+        <span class="skill-percent">90%</span>
+      </div>
+
+      <div class="esp-box reveal">
+        <i class="bi bi-router-fill"></i>
+        <h3>Configuração De Redes</h3>
+        <p>Configuração de redes de computadores, incluindo ligação de dispositivos,
+        endereçamento IP e configuração básica de rede<span>.</span></p>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width: 60%"></div></div>
+        <span class="skill-percent">60%</span>
+      </div>
+
+      <div class="esp-box reveal">
+        <i class="bi bi-pc-display"></i>
+        <h3>Instalação De Sistemas Operativos</h3>
+        <p>Instalo e configuro Windows e Linux: BIOS/UEFI, particionamento,
+        drivers, dual boot, máquinas virtuais e resolução de problemas de arranque<span>.</span></p>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width: 45%"></div></div>
+        <span class="skill-percent">45%</span>
+      </div>
+
+      <div class="esp-box reveal">
+        <i class="bi bi-shield-lock"></i>
+        <h3>Segurança Informática</h3>
+        <p>Aplico boas práticas de proteção de sistemas e redes: palavras-passe e 2FA,
+        firewalls, VPN, encriptação, cópias de segurança (regra 3-2-1) e prevenção de phishing e malware<span>.</span></p>
+        <div class="skill-bar"><div class="skill-bar-fill" style="width: 65%"></div></div>
+        <span class="skill-percent">65%</span>
+      </div>
+        <div class="esp-box reveal">
+      <i class="bi bi-microsoft"></i>
+      <h3>Microsoft Office</h3>
+      <p>Utilização profissional de Word, Excel e PowerPoint: documentos formatados,
+      folhas de cálculo com fórmulas e gráficos, e apresentações claras<span>.</span></p>
+      <div class="skill-bar"><div class="skill-bar-fill" style="width: 70%"></div></div>
+  <span class="skill-percent">70%</span>
+</div>
+    </div>
+  </div>
+</section>
+<hr>
+<section class="formacao" id="formação">
+  <div class="interface">
+    <h2>MINHA <span>FORMAÇÃO.!</span></h2>
+    <div class="timeline">
+
+      <div class="etapa reveal">
+        <i class="bi bi-book"></i>
+        <div>
+          <h3>Ensino Primário</h3>
+          <p>Escola Hlauleka de Chókwè</p>
+        </div>
+      </div>
+
+      <div class="etapa reveal">
+        <i class="bi bi-mortarboard"></i>
+        <div>
+          <h3>Ensino Secundário</h3>
+          <p>Escola Secundária Hlauleka de Chókwè</p>
+        </div>
+      </div>
+
+      <div class="etapa reveal">
+        <i class="bi bi-lightning-charge"></i>
+        <div>
+          <h3>Técnico de Electricidade Industrial</h3>
+          <p>Instalações eléctricas, plantas eléctricas, circuitos e sistemas de protecção<span>.</span></p>
+        </div>
+      </div>
+
+      <div class="etapa reveal">
+        <i class="bi bi-pc-display"></i>
+        <div>
+          <h3>Técnico de Suporte Informático (TSI)</h3>
+          <p class="periodo">Em curso</p>
+          <p>Criação de websites, configuração de redes e sistemas informáticos<span>.</span></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+    <section class="sobre" id="sobre">
+        <div class="interface">
+            <div class="flex">
+                <div class="img-sobre reveal">
+                    <img src="Foto.jpeg" alt="">
+                </div>
+
+
+                <div class="texto-sobre reveal">
+                  <h2>Sobre <span>mim.!</span></h2>
+                  <p>Sou estudante na área de Tecnologias e Electricidade, 
+                    com interesse pelo desenvolvimento de competências técnicas e informáticas.
+                    No ano passado, frequentei o curso de Técnico de Electricidade Industrial, 
+                    onde adquiri conhecimentos sobre instalações eléctricas, plantas eléctricas, 
+                    circuitos, sistemas de protecção e utilização de ferramentas técnicas.
+                    Actualmente, estou a aprofundar os meus conhecimentos na área de Suporte 
+                    Informático, desenvolvendo competências em criação de websites, configuração de 
+                    redes, sistemas informáticos e outras tecnologias.
+                    Tenho como objectivo continuar a aprender, melhorar as minhas capacidades técnicas 
+                    e aplicar os conhecimentos adquiridos em projectos práticos.</p>
+                
+                 <div class="social reveal">
+                    <a href="https://www.instagram.com/khe.yzer?igsi=MWwxOW0yNmVvb3F4ZA==" target="_blank"><button><i class="bi bi-instagram"></i></button></a>
+                    <a href="https://Wa.me/258844246821" target="_blank"><button><i class="bi bi-whatsapp"></i></button></a>
+                     <a href="https://www.threads.com/@khe.yzer" target="_blank"><button><i class="bi bi-threads"></i></button></a>
+                 </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     <hr>
+  <section class="Projectos" id="projectos">
+    <div class="interface">
+        <h2>MEUS <span>PROJECTOS.!</span></h2>
+        <div class="flex">
+
+      <div class="img-port reveal">
+    <div class="img-wrapper">
+        <img src="Prjecto 1.jpeg" alt="Projeto 1">
+        <div class="overlay">Projecto 1</div>
+    </div>
+    <div class="port-botoes">
+        <a href="https://sites.google.com/view/techshopmaputo/inicio" target="_blank">Ver site</a>
+    </div>
+</div>
+
+<div class="img-port reveal">
+    <div class="img-wrapper">
+        <img src="plantas.jpeg" alt="Projeto 2">
+        <div class="overlay">Projecto 2</div>
+    </div>
+    <div class="port-botoes">
+        <a href="plantas.pdf" target="_blank">Ver PDF</a>
+    </div>
+</div>
+
+<div class="img-port reveal">
+    <div class="img-wrapper">
+        <img src="redes.jpeg" alt="Projeto 3">
+        <div class="overlay">Projecto 3</div>
+    </div>
+    <div class="port-botoes">
+        <a href="rede.pdf" target="_blank">Ver PDF</a>
+    </div>
+</div>
+        </div>
+    </div>
+</section>
+    <hr>
+    <section class="formulario reveal" id="formulario">
+        <div class="interface">
+             <h2>FALA<span>COMIGO.!</span></h2>
+
+             <form action="https://formsubmit.co/kheyzerngoque95@gmail.com" method="POST">
+                <input type="text" name="Nome completo" placeholder="Nome completo" required>
+                 <input type="email" name="E-mail"  placeholder="E-mail" required>
+                  <input type="tel" name="Telefone" placeholder="Telefone" required>
+                  <textarea name="Mensagem" placeholder="Sua mensagem" required></textarea>
+                  <div class="enviar"><input type="submit" value="ENVIAR"></div>
+             </form>
+        </div>
+    </section>
+    <hr>
+    <footer>
+    <div class="interface">
+        <div class="line flex">
+            <div class="logo">
+                <img src="logo.jpeg" alt="">
+            </div>
+            <div class="social reveal">
+                <a href="https://www.instagram.com/khe.yzer?igsi=MWwxOW0yNmVvb3F4ZA==" target="_blank"><button><i class="bi bi-instagram"></i></button></a>
+                <a href="https://Wa.me/258844246821" target="_blank"><button><i class="bi bi-whatsapp"></i></button></a>
+                <a href="https://www.threads.com/@khe.yzer" target="_blank"><button><i class="bi bi-threads"></i></button></a>
+            </div>
+        </div>
+        <div class="lin reveal">
+            <p><i class="bi bi-envelope-at-fill"></i> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kheyzerngoque95@gmail.com" target="_blank">kheyzerngoque95@gmail.com</a> </p>
+        </div>
+    </div>
+</footer>
+</body> 
+<script>
+
+    const elementos = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entradas) => {
+        entradas.forEach((item) => {
+            if (item.isIntersecting) {
+                item.target.classList.add('ativo');
+            } else{
+                item.target.classList.remove('ativo');
+            }
+        });
+    }, { threshold:0.3 })
+
+    elementos.forEach((el) => observer.observe(el));
+     
+     const light = document.getElementById('cursorLight');
+
+document.addEventListener('mousemove', (e) => {
+  light.style.left = e.clientX + 'px';
+  light.style.top = e.clientY + 'px';
+});
+</script>
+</html>
